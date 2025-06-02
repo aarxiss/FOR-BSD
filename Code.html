@@ -2,45 +2,51 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>ER-диаграмма (Нотация Чена) — Прокат автомобилей</title>
+  <title>ER-диаграмма Чена — Прокат автомобилей</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      background-color: #fefefe;
     }
-    .container {
+    .canvas {
       position: relative;
-      width: 2000px;
-      height: 1500px;
+      width: 2500px;
+      height: 2000px;
       margin: 0 auto;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
+      background-color: #fff;
     }
     .entity, .attribute, .relationship {
       position: absolute;
       text-align: center;
       padding: 10px;
       box-sizing: border-box;
-      background-color: #fdfdfd;
     }
     .entity {
+      width: 200px;
+      background: #e6f7ff;
       border: 2px solid #000;
-      border-radius: 4px;
-      width: 180px;
+      border-radius: 6px;
+      font-weight: bold;
     }
     .attribute {
+      width: 160px;
+      height: 50px;
+      background: #fff3cd;
       border: 2px solid #333;
       border-radius: 50%;
-      width: 120px;
-      height: 60px;
-      line-height: 60px;
+      line-height: 50px;
     }
     .relationship {
-      width: 120px;
+      width: 130px;
       height: 60px;
-      background-color: #eee;
-      transform: rotate(45deg);
+      background-color: #f8f9fa;
       border: 2px solid #000;
-      line-height: 60px;
+      transform: rotate(45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
     }
     svg {
       position: absolute;
@@ -50,62 +56,63 @@
       height: 100%;
       z-index: 0;
     }
+    .label {
+      font-size: 12px;
+      color: #000;
+      position: absolute;
+    }
   </style>
 </head>
 <body>
-  <h1 style="text-align: center">Инфологическая модель (нотация Чена)<br>для системы проката автомобилей</h1>
-  <div class="container">
+  <h1 style="text-align:center">Инфологическая модель (Нотация Чена)<br>Прокат автомобилей</h1>
+  <div class="canvas">
     <!-- Сущности -->
-    <div class="entity" style="top: 100px; left: 100px;">Автомобиль</div>
-    <div class="attribute" style="top: 20px; left: 60px;">Марка</div>
-    <div class="attribute" style="top: 20px; left: 180px;">Номер</div>
-    <div class="attribute" style="top: 20px; left: 300px;">Год выпуска</div>
-    <div class="attribute" style="top: 200px; left: 60px;">Топливо</div>
-    <div class="attribute" style="top: 200px; left: 180px;">Расход</div>
-    <div class="attribute" style="top: 200px; left: 300px;">Ост. стоимость</div>
-    <div class="attribute" style="top: 300px; left: 180px;">Цена/час</div>
+    <div class="entity" style="top: 150px; left: 200px;">Автомобиль</div>
+    <div class="attribute" style="top: 60px; left: 150px;">Марка</div>
+    <div class="attribute" style="top: 60px; left: 270px;">Номер</div>
+    <div class="attribute" style="top: 60px; left: 390px;">Год выпуска</div>
+    <div class="attribute" style="top: 280px; left: 150px;">Топливо</div>
+    <div class="attribute" style="top: 280px; left: 270px;">Расход</div>
+    <div class="attribute" style="top: 280px; left: 390px;">Стоимость</div>
+    <div class="attribute" style="top: 340px; left: 270px;">Цена/час</div>
 
-    <div class="entity" style="top: 100px; left: 700px;">Клиент</div>
-    <div class="attribute" style="top: 20px; left: 660px;">ФИО</div>
-    <div class="attribute" style="top: 20px; left: 780px;">ИНН</div>
-    <div class="attribute" style="top: 200px; left: 660px;">Адрес</div>
-    <div class="attribute" style="top: 200px; left: 780px;">Телефон</div>
-    <div class="attribute" style="top: 300px; left: 720px;">Паспорт</div>
+    <div class="entity" style="top: 150px; left: 1000px;">Клиент</div>
+    <div class="attribute" style="top: 60px; left: 960px;">ФИО</div>
+    <div class="attribute" style="top: 60px; left: 1080px;">ИНН</div>
+    <div class="attribute" style="top: 280px; left: 960px;">Адрес</div>
+    <div class="attribute" style="top: 280px; left: 1080px;">Телефон</div>
+    <div class="attribute" style="top: 340px; left: 1020px;">Паспорт</div>
 
-    <div class="entity" style="top: 600px; left: 400px;">Прокат</div>
-    <div class="attribute" style="top: 520px; left: 360px;">Дата начала</div>
-    <div class="attribute" style="top: 520px; left: 480px;">Дата конца</div>
-    <div class="attribute" style="top: 700px; left: 360px;">Залог</div>
-    <div class="attribute" style="top: 700px; left: 480px;">Статус</div>
+    <div class="entity" style="top: 800px; left: 600px;">Прокат</div>
+    <div class="attribute" style="top: 700px; left: 500px;">Дата начала</div>
+    <div class="attribute" style="top: 700px; left: 720px;">Дата конца</div>
+    <div class="attribute" style="top: 940px; left: 500px;">Залог</div>
+    <div class="attribute" style="top: 940px; left: 720px;">Статус</div>
 
-    <div class="entity" style="top: 1000px; left: 100px;">Сотрудник</div>
-    <div class="attribute" style="top: 920px; left: 60px;">ФИО</div>
-    <div class="attribute" style="top: 920px; left: 180px;">Должность</div>
-    <div class="attribute" style="top: 1100px; left: 60px;">Телефон</div>
-    <div class="attribute" style="top: 1100px; left: 180px;">Код</div>
+    <div class="entity" style="top: 1400px; left: 200px;">Сотрудник</div>
+    <div class="attribute" style="top: 1300px; left: 160px;">ФИО</div>
+    <div class="attribute" style="top: 1300px; left: 280px;">Должность</div>
+    <div class="attribute" style="top: 1540px; left: 160px;">Телефон</div>
+    <div class="attribute" style="top: 1540px; left: 280px;">Код</div>
 
-    <div class="entity" style="top: 1000px; left: 700px;">Платёж</div>
-    <div class="attribute" style="top: 920px; left: 660px;">Дата</div>
-    <div class="attribute" style="top: 920px; left: 780px;">Сумма</div>
-    <div class="attribute" style="top: 1100px; left: 660px;">Метод</div>
-    <div class="attribute" style="top: 1100px; left: 780px;">Статус</div>
+    <div class="entity" style="top: 1400px; left: 1000px;">Платёж</div>
+    <div class="attribute" style="top: 1300px; left: 960px;">Дата</div>
+    <div class="attribute" style="top: 1300px; left: 1080px;">Сумма</div>
+    <div class="attribute" style="top: 1540px; left: 960px;">Метод</div>
+    <div class="attribute" style="top: 1540px; left: 1080px;">Статус</div>
 
     <!-- Отношения -->
-    <div class="relationship" style="top: 400px; left: 200px;">Назначен</div>
-    <div class="relationship" style="top: 400px; left: 700px;">Арендует</div>
-    <div class="relationship" style="top: 850px; left: 400px;">Обслуживает</div>
-    <div class="relationship" style="top: 850px; left: 700px;">Оплачивает</div>
+    <div class="relationship" style="top: 500px; left: 400px;">Назначен</div>
+    <div class="relationship" style="top: 500px; left: 1000px;">Арендует</div>
+    <div class="relationship" style="top: 1150px; left: 400px;">Обслуживает</div>
+    <div class="relationship" style="top: 1150px; left: 1000px;">Оплачивает</div>
 
-    <!-- SVG линии -->
+    <!-- SVG линии (минимальные) -->
     <svg>
-      <line x1="190" y1="100" x2="190" y2="400" stroke="black" stroke-width="2" />
-      <line x1="790" y1="100" x2="790" y2="400" stroke="black" stroke-width="2" />
-      <line x1="190" y1="1000" x2="400" y2="850" stroke="black" stroke-width="2" />
-      <line x1="790" y1="1000" x2="700" y2="850" stroke="black" stroke-width="2" />
-      <line x1="400" y1="600" x2="200" y2="400" stroke="black" stroke-width="2" />
-      <line x1="400" y1="600" x2="700" y2="400" stroke="black" stroke-width="2" />
-      <line x1="400" y1="600" x2="400" y2="850" stroke="black" stroke-width="2" />
-      <line x1="400" y1="600" x2="700" y2="850" stroke="black" stroke-width="2" />
+      <line x1="300" y1="150" x2="460" y2="530" stroke="black" stroke-width="2" />
+      <line x1="1100" y1="150" x2="1060" y2="530" stroke="black" stroke-width="2" />
+      <line x1="700" y1="800" x2="460" y2="1190" stroke="black" stroke-width="2" />
+      <line x1="700" y1="800" x2="1060" y2="1190" stroke="black" stroke-width="2" />
     </svg>
   </div>
 </body>
