@@ -1,0 +1,53 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ER Diagram - Car Rental" id="1">
+    <mxGraphModel dx="1080" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Сутність: Автомобіль -->
+        <mxCell id="car" value="Автомобіль" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="100" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Сутність: Клієнт -->
+        <mxCell id="client" value="Клієнт" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Сутність: Операція прокату -->
+        <mxCell id="rental" value="Операція прокату" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="250" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Сутність: Співробітник -->
+        <mxCell id="employee" value="Співробітник" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="350" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Сутність: Платіж -->
+        <mxCell id="payment" value="Платіж" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="350" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Зв’язки -->
+        <mxCell id="car_to_rental" style="endArrow=none;html=1;" edge="1" parent="1" source="car" target="rental">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="client_to_rental" style="endArrow=none;html=1;" edge="1" parent="1" source="client" target="rental">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="employee_to_rental" style="endArrow=none;html=1;" edge="1" parent="1" source="employee" target="rental">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="payment_to_rental" style="endArrow=none;html=1;" edge="1" parent="1" source="payment" target="rental">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
